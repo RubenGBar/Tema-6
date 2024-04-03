@@ -7,10 +7,10 @@ public class Hora {
 
 	public Hora(int hora, int minuto) {
 		super();
-		if (hora >= 0 && hora < 24) {
+		if (hora >= 0 && hora <= 23) {
 			this.hora = hora;
 		}
-		if (minuto >= 0 && minuto < 60) {
+		if (minuto >= 0 && minuto <= 59) {
 			this.minuto = minuto;
 		}
 	}
@@ -32,7 +32,7 @@ public class Hora {
 	public boolean setMinutos(int minutos) {
 		boolean valido = false;
 
-		if (minutos >= 0 && minutos < 60) {
+		if (minutos >= 0 && minutos <= 59) {
 			this.minuto = minutos;
 			valido = true;
 		}
@@ -43,7 +43,7 @@ public class Hora {
 	public boolean setHora(int hora) {
 		boolean valido = false;
 
-		if (hora >= 0 && hora < 23) {
+		if (hora >= 0 && hora <= 23) {
 			this.hora = hora;
 			valido = true;
 		}

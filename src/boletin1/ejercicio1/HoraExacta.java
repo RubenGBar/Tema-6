@@ -7,7 +7,7 @@ public class HoraExacta extends Hora{
 	public HoraExacta(int hora, int minuto, int segundo) {
 		super(hora, minuto);
 		
-		if (segundo >= 0 && segundo < 60) {
+		if (segundo >= 0 && segundo <= 59) {
 			this.segundo = segundo;
 		}
 		
@@ -16,7 +16,8 @@ public class HoraExacta extends Hora{
 	public boolean setSegundo (int segundo) {
 		boolean valido = false;
 		
-		if (segundo >= 0 && segundo < 60) {
+		if (segundo >= 0 && segundo <= 59) {
+			this.segundo = segundo;
 			valido = true;
 		}
 		
