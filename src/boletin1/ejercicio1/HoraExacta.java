@@ -2,9 +2,9 @@ package boletin1.ejercicio1;
 
 public class HoraExacta extends Hora{
 	
-	private double segundo = 0;
+	private int segundo = 0;
 
-	public HoraExacta(int hora, int minuto, double segundo) {
+	public HoraExacta(int hora, int minuto, int segundo) {
 		super(hora, minuto);
 		
 		if (segundo >= 0 && segundo < 60) {
@@ -13,7 +13,7 @@ public class HoraExacta extends Hora{
 		
 	}
 	
-	public boolean setSegundo (double segundo) {
+	public boolean setSegundo (int segundo) {
 		boolean valido = false;
 		
 		if (segundo >= 0 && segundo < 60) {
