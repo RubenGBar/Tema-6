@@ -56,13 +56,13 @@ public class Hora {
 		String cadena = "";
 
 		if (hora < 10) {
-			cadena += 0;
+			cadena += "0";
 		}
 		
 		cadena += this.hora + ":";
 		
 		if (minuto < 10) {
-			cadena += 0;
+			cadena += "0";
 		}
 		
 		cadena += this.minuto;

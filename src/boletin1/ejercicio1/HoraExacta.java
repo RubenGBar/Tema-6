@@ -39,14 +39,12 @@ public class HoraExacta extends Hora{
 	
 	@Override
 	public String toString () {
-		String cadena = "";
-		
-		super.toString();
+		String cadena = super.toString();;
 		
 		cadena += ":";
 		
 		if (segundo < 10) {
-			cadena += 0;
+			cadena += "0";
 		}
 		
 		cadena += this.segundo;
