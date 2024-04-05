@@ -62,31 +62,25 @@ public class Electrodomestico {
 		return peso;
 	}
 
-	public ConsumoEnergetico getConsumo() {
-		return consumo;
+	public char getConsumo() {
+		return String.valueOf(consumo).charAt(0);
 	}
 
-	public Color getColor() {
-		return color;
+	public String getColor() {
+		return String.valueOf(color);
 	}
 
 	private boolean comprobarConsumoEnergetico(char letra) {
 		Boolean correcto = false;
-		String charAString = "";
 		
-		if(letra != ' ') {
-			charAString = letra + "";
-		}
-		
-		if (ConsumoEnergetico.valueOf(charAString) == ConsumoEnergetico.A || 
-			ConsumoEnergetico.valueOf(charAString) == ConsumoEnergetico.B ||
-			ConsumoEnergetico.valueOf(charAString) == ConsumoEnergetico.C ||
-			ConsumoEnergetico.valueOf(charAString) == ConsumoEnergetico.D ||
-			ConsumoEnergetico.valueOf(charAString) == ConsumoEnergetico.E ||
-			ConsumoEnergetico.valueOf(charAString) == ConsumoEnergetico.F) {
-			
-			this.consumo = ConsumoEnergetico.valueOf(charAString);
-			correcto = true;
+		switch(letra) {
+			case 'A', 'B', 'C', 'D', 'E', 'F' -> {
+				this.consumo = ConsumoEnergetico.valueOf(String.valueOf(letra));
+				correcto = true;
+			}
+			default -> {
+				this.consumo = ConsumoEnergetico.F;
+			}
 		}
 		
 		return correcto;
@@ -95,16 +89,14 @@ public class Electrodomestico {
 	private boolean comprobarColor(String color) {
 		Boolean correcto = false;
 		
-		if (color != null && !color.equals("") && 
-			Color.valueOf(color) == Color.AZUL   || 
-			Color.valueOf(color) == Color.BLANCO ||
-			Color.valueOf(color) == Color.GRIS   ||
-			Color.valueOf(color) == Color.NEGRO  ||
-			Color.valueOf(color) == Color.ROJO     ) {
-			
-			this.color = Color.valueOf(color);
-			correcto = true;
-			
+		switch(color) {
+			case "AZUL", "BLANCO", "GRIS", "NEGRO", "ROJO" -> {
+				this.color = Color.valueOf(color);
+				correcto = true;
+			}
+			default -> {
+				this.color = Color.BLANCO;
+			}
 		}
 		
 		return correcto;
